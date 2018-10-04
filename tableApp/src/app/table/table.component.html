@@ -1,0 +1,250 @@
+
+
+<div>
+<span><h1>Responsive Table</h1><br/></span>
+<span><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="addbutton">Add</button></span>
+</div>
+  
+  <table class="container">
+    <thead>
+      <tr>
+        <th><h1>Index</h1></th>
+        <th><h1>Name</h1></th>
+        <th><h1>City</h1></th>
+        <th><h1>Country</h1></th>
+        <th><h1>Phone Number</h1></th>
+        <th><h1>Action</h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let po of personObjectList;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{po.givenName}}</td>
+          <td>{{po.givenCity}}</td>
+          <td>{{po.givenCity}}</td>
+          <td>{{po.givenPhoneNumber}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm"  (click)=getindex(i)   data-toggle="modal" data-target="#editModal" > 
+              Edit
+            </button>
+            &nbsp;
+            <button class="btn btn-primary btn-sm" (click)=getindex(i) data-toggle="modal" data-target="#delModal">
+              Delete
+            </button>
+          </td>
+        
+      </tr>
+     
+    </tbody>
+  </table>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div></div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+ 
+
+  <!-- Modal Starting Of Person-->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enter Person Data</h4>
+        </div>
+        <div class="modal-body">
+          
+
+
+
+          <label>
+            Name:<br/>
+            <input type="text" [(ngModel)]="givenName" class="form-control" #name><br>
+          </label>
+          
+          <br>
+          
+          <label>
+            City:<br/>
+            <input type="text" [(ngModel)]="givenCity" class="form-control" #city><br>
+          </label>
+          
+          <br>
+          
+          <label>
+            Country:<br/>
+            <input type="text" [(ngModel)]="givenCountry" class="form-control" #country><br>
+          </label>
+          
+          <br>
+          
+          <label>
+            Phone Number:<br/>
+            <input type="Number" [(ngModel)]="givenPhoneNumber" class="form-control" #phoneNumber><br>
+          </label>
+
+
+          
+          
+
+        </div>
+        <div class="modal-footer">
+            <button (click)="submitData(name.value,city.value,country.value,phoneNumber.value)">Save changes</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal Ending Of Person-->
+
+
+
+
+
+
+
+
+
+  <!-- Modal Starting Of Delete-->
+  <div class="modal fade" id="delModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Delete</h4>
+          </div>
+          <div class="modal-body">
+            
+          
+            
+              <h1>Are You Sure You Want To Delete?</h1>
+          
+  
+            
+  
+  
+            
+            
+  
+          </div>
+          <div class="modal-footer">
+              <button (click)="deleteFunc()" class="btn btn-default" data-dismiss="modal">Yes, Delete</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No , don't delete</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- Modal Ending Of Delete-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Modal Edit Starting Of Person-->
+  <div class="modal fade" id="editModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enter Person Data</h4>
+        </div>
+        <div class="modal-body">
+          
+
+
+
+          <label>
+            Name:<br/>
+            <input type="text" [(ngModel)]="givenName" class="form-control" #name><br>
+          </label>
+          
+          <br>
+          
+          <label>
+            City:<br/>
+            <input type="text" [(ngModel)]="givenCity" class="form-control" #city><br>
+          </label>
+          
+          <br>
+          
+          <label>
+            Country:<br/>
+            <input type="text" [(ngModel)]="givenCountry" class="form-control" #country><br>
+          </label>
+          
+          <br>
+          
+          <label>
+            Phone Number:<br/>
+            <input type="Number" [(ngModel)]="givenPhoneNumber" class="form-control" #phoneNumber><br>
+          </label>
+
+
+          
+          
+
+        </div>
+        <div class="modal-footer">
+          <button (click)="submitDataEdit(name.value,city.value,country.value,phoneNumber.value)">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal Edit Ending Of Person-->
+  
+
+
+
+

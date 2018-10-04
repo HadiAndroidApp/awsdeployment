@@ -1,0 +1,17 @@
+{
+  "universal": {
+    "skipInstall": false,
+    "directory": ".",
+    "project": "tableApp"
+  },
+  "serverless": {
+    "provider": "aws",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "tableApp",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}
